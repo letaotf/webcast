@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-资产列表</title>
+    <link th:href="@{css/asset.css}" rel="stylesheet"/>
+    <script th:src="@{js/asset.js}"></script>
+    <script>
+       $(function () {
+           $(".asset-detail").dialog({
+               width: 500,
+               height: 420,
+               autoOpen: false,
+               modal:true,
+               show: {
+                   effect: "blind",
+                   duration: 1000
+               },
+               hide: {
+                   effect: "explode",
+                   duration: 1000
+               }
+           });
+       });
+    </script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div class="asset-main">
+        <div class="asset-title">
+            <p>资产列表</p>
+        </div>
+        <hr />
+        <div class="asset-search">
+            <span>资产编号:</span>
+            <input type="text" placeholder="请输入资产编号" value="" class="asset-assetNo"/>
+            <span>用户编号:</span>
+            <input type="text" placeholder="请输入用户编号" value="" class="asset-userNo"/>
+            <button style="width: 100px;height:40px;" class="search-asset layui-btn">搜索</button>
+        </div>
+        <div class="asset-table">
+            <table style="width: 1000px;" border='1' class="table">
+                <thead>
+                <tr style="height: 50px;">
+                    <th>资产编号</th>
+                    <th>用户编号</th>
+                    <th>鱼丸数量</th>
+                    <th>鱼丸总价</th>
+                    <th>鲜花数量</th>
+                    <th>鲜花总价</th>
+                    <th>火箭数量</th>
+                    <th>火箭总价</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="asset-button">
+        </div>
+        <div class="asset-detail">
+            <div class="asset-year-detail">
+                <span>年:</span>
+                <input  class="year-detail" type="text" disabled="disabled"/>
+            </div>
+            <div class="asset-month-detail">
+                <span>月:</span>
+                <input  class="month-detail" type="text" disabled="disabled"/>
+            </div>
+            <div class="asset-day-detail">
+                <span>日:</span>
+                <input  class="day-detail" type="text" disabled="disabled"/>
+            </div>
+            <div class="asset-fishBall-detai">
+                <span>鱼丸总价:</span>
+                <input  class="fishBall-detail" type="text" disabled="disabled"/>
+            </div>
+            <div class="asset-flower-detail">
+                <span>鲜花总价:</span>
+                <input  class="flower-detail" type="text" disabled="disabled"/>
+            </div>
+            <div class="asset-rocket-detail">
+                <span>火箭总价:</span>
+                <input  class="rocket-detail" type="text" disabled="disabled"/>
+            </div>
+            <div class="asset-allMoney-detail">
+                <span>总价:</span>
+                <input  class="allMoney-detail" type="text" disabled="disabled"/>
+            </div>
+        </div>
+    </div>
+    <div class="assetDetail-main">
+        <div class="assetDetail-title">
+            <p>资产列表详情</p>
+        </div>
+        <hr/>
+        <div class="assetDetail-catalogue">
+            <div class="assetDetail-catalogue-assetNO">
+                <span>资产编号:</span>
+                <input type="text" placeholder="请输入资产编号" class="assetDetail-catalogue-assetNO" disabled="disabled" style="width: 134px;height: 38px"/>
+                <span>用户编号:</span>
+                <input type="text" placeholder="请输入用户编号" class="assetDetail-catalogue-userNO" disabled="disabled" style="width: 134px;height: 38px"/>
+                <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</span>
+                <input type="text" placeholder="请输入姓名" class="assetDetail-catalogue-userName" disabled="disabled" style="width: 70px;height: 38px"/>
+            </div>
+        </div>
+        <hr/>
+        <div class="assetDetail-search">
+            <span>年:</span>
+            <input type="text" placeholder="请输入年" class="year" style="width: 200px;height: 38px"/>
+            <span>月:</span>
+            <input type="text" placeholder="请输入月" class="month" style="width: 200px;height: 38px"/>
+            <span>日:</span>
+            <input type="text" placeholder="请输入日" class="day" style="width: 200px;height: 38px"/>
+            <button style="width: 100px;height:40px;" class="search-detail layui-btn">搜索</button>
+            <a class="export">
+                <i class="Hui-iconfont">导出</i>
+            </a>
+        </div>
+        <div class="assetDetail-table-div">
+            <div class="assetDetail-table">
+                <table style="width: 1000px;" border='1' class="table">
+                    <thead>
+                    <tr style="height: 50px;">
+                        <th>资产编号</th>
+                        <th>用户编号</th>
+                        <th>年</th>
+                        <th>月</th>
+                        <th>日</th>
+                        <th>鱼丸总价</th>
+                        <th>鲜花总价</th>
+                        <th>火箭总价</th>
+                        <th>总价</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="assetDetail-button">
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

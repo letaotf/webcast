@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.NetworkBroadcastTypeDetailsMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.NetworkBroadcastTypeDetailsDO" >
+    <id column="network_broadcast_type_detail_id" property="networkBroadcastTypeDetailId" jdbcType="BIGINT" />
+    <result column="type_id" property="typeId" jdbcType="BIGINT" />
+    <result column="network_type_no" property="networkTypeNo" jdbcType="VARCHAR" />
+    <result column="type_detail_name" property="typeDetailName" jdbcType="VARCHAR" />
+    <result column="brief_introduction" property="briefIntroduction" jdbcType="VARCHAR" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    network_broadcast_type_detail_id, type_id, network_type_no, type_detail_name, brief_introduction, 
+    status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from web_network_broadcast_type_details
+    where network_broadcast_type_detail_id = #{networkBroadcastTypeDetailId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from web_network_broadcast_type_details
+    where network_broadcast_type_detail_id = #{networkBroadcastTypeDetailId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taofeng.webcast.dao.domain.NetworkBroadcastTypeDetailsDO" >
+    insert into web_network_broadcast_type_details (network_broadcast_type_detail_id, type_id, 
+      network_type_no, type_detail_name, brief_introduction, 
+      status, gmt_create, gmt_modified
+      )
+    values (#{networkBroadcastTypeDetailId,jdbcType=BIGINT}, #{typeId,jdbcType=BIGINT}, 
+      #{networkTypeNo,jdbcType=VARCHAR}, #{typeDetailName,jdbcType=VARCHAR}, #{briefIntroduction,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.taofeng.webcast.dao.domain.NetworkBroadcastTypeDetailsDO" keyProperty="networkBroadcastTypeDetailId" useGeneratedKeys="true">
+    insert into web_network_broadcast_type_details
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="networkBroadcastTypeDetailId != null" >
+        network_broadcast_type_detail_id,
+      </if>
+      <if test="typeId != null" >
+        type_id,
+      </if>
+      <if test="networkTypeNo != null" >
+        network_type_no,
+      </if>
+      <if test="typeDetailName != null" >
+        type_detail_name,
+      </if>
+      <if test="briefIntroduction != null" >
+        brief_introduction,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="networkBroadcastTypeDetailId != null" >
+        #{networkBroadcastTypeDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="typeId != null" >
+        #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="networkTypeNo != null" >
+        #{networkTypeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="typeDetailName != null" >
+        #{typeDetailName,jdbcType=VARCHAR},
+      </if>
+      <if test="briefIntroduction != null" >
+        #{briefIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taofeng.webcast.dao.domain.NetworkBroadcastTypeDetailsDO" >
+    update web_network_broadcast_type_details
+    <set >
+      <if test="typeId != null" >
+        type_id = #{typeId,jdbcType=BIGINT},
+      </if>
+      <if test="networkTypeNo != null" >
+        network_type_no = #{networkTypeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="typeDetailName != null" >
+        type_detail_name = #{typeDetailName,jdbcType=VARCHAR},
+      </if>
+      <if test="briefIntroduction != null" >
+        brief_introduction = #{briefIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where network_broadcast_type_detail_id = #{networkBroadcastTypeDetailId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taofeng.webcast.dao.domain.NetworkBroadcastTypeDetailsDO" >
+    update web_network_broadcast_type_details
+    set type_id = #{typeId,jdbcType=BIGINT},
+      network_type_no = #{networkTypeNo,jdbcType=VARCHAR},
+      type_detail_name = #{typeDetailName,jdbcType=VARCHAR},
+      brief_introduction = #{briefIntroduction,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where network_broadcast_type_detail_id = #{networkBroadcastTypeDetailId,jdbcType=BIGINT}
+  </update>
+</mapper>

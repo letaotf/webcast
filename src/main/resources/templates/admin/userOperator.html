@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理</title>
+    <!--获取静态的js文件-->
+    <link th:href="@{css/layout.css}" rel="stylesheet"/>
+    <link th:href="@{css/userOperator.css}" rel="stylesheet"/>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet"/>
+    <link th:href="@{css/outercss/jquery-ui.min.css}" rel="stylesheet" />
+    <script th:src="@{js/jquery-3.3.1.js}"></script>
+    <script th:src="@{js/outerjs/jquery-ui.min.js}"></script>
+    <script th:src="@{js/layout.js}"></script>
+    <script th:src="@{js/userOperator.js}"></script>
+    <link th:href="@{layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{layui/layui.js}"></script>
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="wrapper-header">
+        <div class="logo-main">
+            <div class="logo-icon">
+                <div class="logo" style="margin: 11px 0px 0 0;"></div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div class="wrapper-title">
+        <div class="login_zc">
+            <div class="dl">
+                <div class="icon"></div>
+                <div class="tit">
+                   <input type="text" value="" class="userName" style="width: 50px;text-align: center;border: none;color: #0C0C0C;font-size: 17px;" disabled="disabled"/>
+                    <a class="logout">注销</a>
+                </div>
+            </div>
+            <div class="dl" style="margin-left: 15px;">
+                <div class="tit" id="_myApp">
+                    <a th:href="@{/userOperator.htm}">我的应用</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-icon">
+    </div>
+    <div class="wrapper-name">
+        <div class="app-name">
+            <span>我的应用</span>
+        </div>
+        <div class="app-position">
+            <span>你的位置:<a th:href="@{/userOperator.htm}">首页</a> > <a th:href="@{/userOperator.htm}">我的应用</a></span>
+        </div>
+    </div>
+    <div class="wrapper-body">
+        <div class="left">
+            <ul>
+                <li class="title_3 li_active">
+                    <span class="icon1"></span>
+                    <h4>个人信息管理</h4>
+                    <dl class="detail active_3">
+                        <dd ><span class="user-info">个人信息详情</span></dd>
+                    </dl>
+                </li>
+                <li class="title_9 li_active ">
+                    <span class="icon1"></span>
+                    <h4>商品管理</h4>
+                    <dl class="detail active_9">
+                        <dd><span class="goods-info">网上商店</span></dd>
+                        <dd><span class="goods-record">购买记录</span></dd>
+                    </dl>
+                </li>
+                <li class="title_8 li_active">
+                    <span class="icon1"></span>
+                    <h4>投诉管理</h4>
+                    <dl class="detail active_8">
+                        <dd><span class="complain-info">发起投诉</span></dd>
+                        <dd><span class="complain-record">查看投诉</span></dd>
+                    </dl>
+                </li>
+                <li class="title_5 li_active">
+                    <span class="icon1"></span>
+                    <h4>诚信值管理</h4>
+                    <dl class="detail active_5">
+                        <dd><span class="intergity-record">诚信值记录</span></dd>
+                    </dl>
+                </li>
+            </ul>
+            <div class="notice">
+                <h2>公告信息</h2>
+                <ul class="notice-ul">
+                </ul>
+            </div>
+        </div>
+        <div class="mulu">
+            <p style="font-size: 30px">欢迎使用本系统</p>
+        </div>
+        <div class="right">
+            <div class="user-operator">
+                <div class="user-templet">
+                    <div class="user-title">
+                        <span style="font-size: 20px" class="user-span">个人信息列表</span>
+                    </div>
+                    <div class="user-main">
+                    </div>
+                </div>
+                <div class="goods-info-templet">
+                    <div class="goodsDetail-list-title">
+                        <span>网上商店</span>
+                    </div>
+                    <div class="goodsDetail-list">
+                    </div>
+                </div>
+                <div class="goods-record-templet">
+                    <div class="goods-record-title">
+                        <span style="font-size: 20px">购买记录</span>
+                    </div>
+                    <div class="goods-record-table">
+                        <table style="width: 1000px;" border='1' class="table">
+                            <thead>
+                            <tr style="height: 50px;">
+                                <th style="text-align:center;width: 400px;">商品名称</th>
+                                <th style="text-align:center;width: 100px;">商品价格</th>
+                                <th style="text-align:center;width: 200px;">购买时间</th>
+                                <th style="text-align:center;width: 200px;">使用情况</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="complain-info-templet">
+                    <div class="complain-info-title">
+                        <span style="font-size: 20px">发起投诉</span>
+                    </div>
+                    <div class="add-complain">
+                        <div class="addComplain-name">
+                            <span>本&nbsp;&nbsp;&nbsp;人&nbsp;&nbsp;姓&nbsp;&nbsp;名:</span>
+                            <input type="text" placeholder="请输入本人姓名" class="addComplain-name-input layui-input" style="width: 300px;height: 30px"/>
+                        </div>
+                        <div class="addComplain-defendantUserName">
+                            <span>被投诉人姓名:</span>
+                            <input type="text" placeholder="请输入被投诉人姓名" class="addComplain-defendantUserName-input layui-input" style="width: 300px;height: 30px"/>
+                        </div>
+                        <div class="addComplain-reason">
+                            <span>投诉原因:</span>
+                            <div class="addGoods-content">
+                                <textarea class="addGoods-content-textarea layui-input" style="height: 200px;width: 400px;" placeholder="字数1000以内"></textarea>
+                            </div>
+                        </div>
+                        <div class="addComplain-success">
+                            <button class="addComplain-button layui-btn" style="width: 300px;height: 40px">保存</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="complain-record-templet">
+                    <div class="complain-record-title">
+                        <span style="font-size: 20px" >投诉记录</span>
+                    </div>
+                    <div class="complain-record-table">
+                        <table style="width: 1000px;" border='1' class="table">
+                            <thead>
+                            <tr style="height: 50px;">
+                                <th style="text-align: center;">用户编号</th>
+                                <th style="text-align: center;">姓名</th>
+                                <th style="text-align: center;">联系方式</th>
+                                <th style="text-align: center;">被投诉用户编号</th>
+                                <th style="text-align: center;">姓名</th>
+                                <th style="text-align: center;">联系方式</th>
+                                <th style="text-align: center;">时间</th>
+                                <th style="text-align: center;">投诉内容</th>
+                                <th style="text-align: center;">投诉等级</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="intergity-record-templet">
+                    <div class="intergity-record-title">
+                        <span style="font-size: 20px">诚信值记录</span>
+                    </div>
+                    <div class="intergity-record-table">
+                        <div class="intergity-value">
+                            <span style="font-size: 20px">诚信值:</span>
+                            <input type="text" class="layui-input intergity-record-value" style="width: 300px;height: 30px" disabled="disabled"/>
+                        </div>
+                        <div class="intergity-record-table">
+                            <span style="font-size: 20px">扣分项</span>
+                            <table style="width: 1000px;text-align: center" border='1' class="table">
+                                <thead>
+                                <tr style="height: 50px;">
+                                    <th style="text-align: center;">已扣分数</th>
+                                    <th style="text-align: center;">原因</th>
+                                    <th style="text-align: center;">时间</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer_nav">
+            <div class="fot_ti">
+                <div>
+                    版权所有 © TF网络直播（集团）股份有限公司 未经许可不得复制、转载或摘编，违者必究!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

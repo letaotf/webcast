@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-诚信值列表详情</title>
+    <link th:href="@{css/intergityValues.css}" rel="stylesheet"/>
+    <script th:src="@{js/intergityValues.js}"></script>
+    <script>
+        $(function() {
+            $(".update-intergityValues").dialog({
+                width: 300,
+                height: 150,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div class="intergityValues-main">
+        <div class="intergityValues-title">
+            <p>诚信值列表详情</p>
+        </div>
+        <hr/>
+        <div class="intergityValues-catalogue">
+            <span>用户编号:</span>
+            <input type="text" placeholder="请输入资产编号" value="" class="intergityValues-userNO" style="width: 150px;height:38px;"/>
+            <span>用户类型:</span>
+            <select class="intergityValues-select" style="width: 150px;height:38px;">
+                <option value="" selected="selected">请选择用户类型</option>
+                <option value="0">普通用户</option>
+                <option value="1">网络主播</option>
+            </select>
+            <span>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名:</span>
+            <input type="text" placeholder="请输入姓名" value="" class="intergityValues-userName" style="width: 150px;height:38px;"/>
+            <span>分&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;数:</span>
+            <input type="text" placeholder="分数值不可小于0" value="" class="intergityValues-upValue" style="width: 100px;height:38px;"/>
+            <span>至</span>
+            <input type="text" placeholder="分数值不可大于100" value="" class="intergityValues-underValue" style="width: 100px;height:38px;"/>
+            <button style="width: 100px;height:40px;" class="search-intergityValues layui-btn">搜索</button>
+        </div>
+        <hr/>
+        <div class="intergityValues-table">
+            <table style="width: 1000px;" border='1' class="table">
+                <thead>
+                <tr style="height: 50px;">
+                    <th bgcolor="#009688">用户编号</th>
+                    <th>姓名</th>
+                    <th>用户类型</th>
+                    <th>联系方式</th>
+                    <th>诚信值(分)</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="intergityValues-button">
+        </div>
+        <div class="update-intergityValues" title="更新诚信值">
+            <div class="update-div">
+                <span>诚信值:</span>
+                <input type="text" class="update-intergityValues-input" />
+            </div>
+            <div class="update-button">
+                <input type="button" value="保存" class="update-intergityValues-button layui-btn" style="width: 100px;height:40px;"/>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

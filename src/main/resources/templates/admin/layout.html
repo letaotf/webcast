@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理</title>
+    <!--获取静态的js文件-->
+    <link th:href="@{css/layout.css}" rel="stylesheet"/>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css" rel="stylesheet"/>
+    <link th:href="@{css/outercss/jquery-ui.min.css}" rel="stylesheet" />
+    <script th:src="@{js/jquery-3.3.1.js}"></script>
+    <script th:src="@{js/outerjs/jquery-ui.min.js}"></script>
+    <script th:src="@{js/layout.js}"></script>
+    <link th:href="@{layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{layui/layui.js}"></script>
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="wrapper-header">
+        <div class="logo-main">
+            <div class="logo-icon">
+                <div class="logo" style="margin: 11px 0px 0 0;"></div>
+            </div>
+        </div>
+        <hr />
+    </div>
+    <div class="wrapper-title">
+        <div class="login_zc">
+            <div class="dl">
+                <div class="icon"></div>
+                <div class="tit">
+                    <input type="text" value="" class="my-userName" style="width: 50px;text-align: center;border: none;color: #0C0C0C;font-size: 17px;" disabled="disabled"/>
+                    <a class="my-logout">注销</a>
+                </div>
+            </div>
+            <div class="dl" style="margin-left: 15px;">
+                <div class="tit" id="my">
+                    <a th:href="@{/user.htm}">我的应用</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="wrapper-icon">
+    </div>
+    <div class="wrapper-name">
+         <div class="app-name">
+           <span>我的应用</span>
+         </div>
+         <div class="app-position">
+           <span>你的位置:<a th:href="@{/common.htm}">首页</a> > <a th:href="@{/user.htm}">我的应用</a></span>
+         </div>
+    </div>
+    <div class="wrapper-body">
+        <div class="left">
+            <ul>
+                <li class="title_1 li_active ">
+                    <span class="icon1"></span>
+                    <h4>人员管理</h4>
+                    <!--<h4>人员管理</h4>-->
+                    <dl class="detail active_1">
+                        <dd><a th:href="@{/user.htm}">网络主播审核</a></dd>
+                    </dl>
+                </li>
+                <li class="title_2 li_active ">
+                    <span class="icon1"></span>
+                    <h4>网络直播节目管理</h4>
+                    <dl class="detail active_2">
+                         <dd><a th:href="@{/networkBroadcast.htm}">节目清单</a></dd>
+                    </dl>
+                </li>
+                <li class="title_3 li_active ">
+                    <span class="icon1"></span>
+                    <h4>资产管理</h4>
+                    <dl class="detail active_3">
+                         <dd><a th:href="@{/asset.htm}">资产列表</a></dd>
+                    </dl>
+                </li>
+                <li class="title_4 li_active">
+                    <span class="icon1"></span>
+                    <h4>商品管理</h4>
+                    <dl class="detail active_4">
+                        <dd ><a th:href="@{/goodsDetail.htm}">在线商品列表</a></dd>
+                        <dd><a th:href="@{/goodsOperating.htm}">商品操作</a></dd>
+                    </dl>
+                </li>
+                <li class="title_5 li_active">
+                    <span class="icon1"></span>
+                    <h4>诚信值管理</h4>
+                    <dl class="detail active_5">
+                         <dd><a th:href="@{/intergityValues.htm}">诚信值列表</a></dd>
+                    </dl>
+                </li>
+                <li class="title_6 li_active">
+                    <span class="icon1"></span>
+                    <h4>投诉管理</h4>
+                    <dl class="detail active_6">
+                         <dd><a th:href="@{/complain.htm}">投诉列表</a></dd>
+                    </dl>
+                </li>
+                <li class="title_7 li_active">
+                    <span class="icon1"></span>
+                    <h4>公告管理</h4>
+                    <dl class="detail active_7">
+                         <dd><a th:href="@{/notice.htm}">发布公告</a></dd>
+                    </dl>
+                </li>
+            </ul>
+            <hr/>
+            <div class="notice">
+                <h2>公告信息</h2>
+                <ul class="notice-ul">
+                </ul>
+            </div>
+        </div>
+        <div class="mulu">
+            <p style="font-size: 60px">欢迎使用本系统</p>
+        </div>
+        <div class="right">
+            <th:block layout:fragment="right-fragment"></th:block>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footer_nav">
+            <div class="fot_ti">
+                <div>
+                    版权所有 © TF网络直播（集团）股份有限公司 未经许可不得复制、转载或摘编，违者必究!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+.intergityValues-main{
+    position: relative;
+    top:30px;
+    width: 1100px;
+}
+
+.intergityValues-main p{
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-left: 500px;
+}
+
+.active{
+    color: #fff !important;
+    background: #009688 !important;
+}
+
+.intergityValues-catalogue{
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.intergityValues-table{
+    box-sizing: border-box;
+    padding-left:71px;
+}
+
+.intergityValues-button{
+    box-sizing: border-box;
+    padding-left:800px;
+}
+
+.update-div{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.update-button{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.intergityValues-table table th{
+    text-align: center;
+    background-color: #009688;
+}
+
+.intergityValues-table td{
+    text-align: center;
+}

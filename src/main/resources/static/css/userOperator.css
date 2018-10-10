@@ -1,0 +1,202 @@
+.goodsDetail-list-div{
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-top: 10px;
+    float: left;
+}
+
+.wrapper-body .right{
+    width: 1100px;
+    height:100%;
+}
+
+/**************************网上商城*******************************/
+
+.wrapper-body .goodsDetail-list-title{
+    width: 1100px;
+    height: 50px;
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.wrapper-body .goodsDetail-list-title span{
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 500px;
+}
+
+.wrapper-body .right .user-operator .goods-info-templet{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+.wrapper-body .right .user-operator .goodsDetail-list{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 44px;
+}
+
+.buy-goods{
+    width: 224px;
+    height:30px;
+}
+
+/****************************发起投诉*****************************/
+
+.wrapper-body .right .user-operator .complain-info-templet{
+    height: 600px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.wrapper-body .right .user-operator .complain-info-title{
+      border-bottom: 1px solid #C6C6C6;
+      padding-top: 10px;
+      padding-bottom: 10px;
+}
+
+.wrapper-body .right .user-operator .add-complain{
+      box-sizing: border-box;
+      padding-top: 10px;
+      line-height: 40px;
+}
+
+.wrapper-body .right .user-operator .addComplain-success{
+     box-sizing: border-box;
+     padding-top: 10px;
+}
+
+/****************************用户信息*****************************/
+
+.wrapper-body .right .user-operator .user-templet{
+    height: 600px;
+}
+
+.wrapper-body .right .user-operator .user-title{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.wrapper-body .right .user-operator .compile-button{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 792px;
+    padding-bottom: 10px;
+    float: left;
+}
+
+.wrapper-body .right .user-operator .user-info-list{
+    border: 1px solid #C6C6C6;
+    width: 700px;
+    height: 400px;
+    float: left;
+}
+
+.wrapper-body .right .user-operator .user-info-div{
+    box-sizing: border-box;
+    padding-top: 26px;
+    padding-left: 100px;
+    line-height: 41px;
+}
+
+.wrapper-body .right .user-operator .user-info-img{
+    border: 1px solid #C6C6C6;
+    width: 295px;
+    height: 400px;
+    float: right;
+}
+
+.wrapper-body .right .user-operator .save-button{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 900px;
+    padding-bottom: 10px;
+}
+
+/****************************购买记录*****************************/
+
+.wrapper-body .right .user-operator .goods-record-templet{
+    height: 400px;
+}
+.wrapper-body .right .user-operator .goods-record-title{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 500px;
+}
+
+.wrapper-body .right .user-operator .goods-record-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+/****************************投诉记录*****************************/
+
+.wrapper-body .right .user-operator .complain-record-templet{
+    height: 400px;
+}
+.wrapper-body .right .user-operator .complain-record-title{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 500px;
+}
+
+.wrapper-body .right .user-operator .complain-record-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+/****************************诚信值*****************************/
+
+.wrapper-body .right .user-operator .intergity-record-templet{
+    height: 500px;
+}
+
+.wrapper-body .right .user-operator .intergity-record-title{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 500px;
+}
+
+.wrapper-body .right .user-operator .intergity-value{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wrapper-body .right .user-operator .intergity-record-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+
+}
+
+.intergity-record-table table th{
+    background-color: #009688;
+}
+
+.complain-record-table table th{
+    background-color: #009688;
+}
+
+.goods-record-table table th{
+    background-color: #009688;
+}
+
+.user-info-img img{
+    width: 278px;
+    height: 369px;
+}
+

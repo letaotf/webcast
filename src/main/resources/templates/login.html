@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理系统登录</title>
+    <script th:src="@{js/jquery-3.3.1.js}"></script>
+    <link th:href="@{css/login.css}" rel="stylesheet"/>
+    <link th:href="@{layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{layui/layui.js}"></script>
+</head>
+<body>
+    <div class="login-form">
+        <div class="login-user">
+            <span>用户名:</span>
+            <input type="text" value="" class="user-name icon input1" placeholder="请输入用户名称" />
+        </div>
+        <div class="login-password">
+            <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+            <input type="password" value="" class="password icon input2" placeholder="请输入密码"/>
+        </div>
+        <div class="login-role">
+            <table>
+                <tr>
+                    <td style="width: 100px" >
+                        <input  type="radio" name="role" value="0" />
+                        <span>普通用户</span>
+                    </td>
+                    <td style="width: 100px" >
+                        <input  type="radio" name="role" value="1" />
+                        <span>网络主播</span>
+                    </td>
+                    <td style="width: 100px">
+                        <input  type="radio" name="role" value="2"/>
+                        <span>管理员</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="login-button">
+            <a class="login" style="width: 300px;height: 30px" th:href="@{user.htm}" >立即登录</a>
+            <!--<button class="layui-btn login">立即登录</button>-->
+        </div>
+        <div class="login-forget-password">
+            <a>忘记密码？</a>
+        </div>
+    </div>
+</body>
+</html>

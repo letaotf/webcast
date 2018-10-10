@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理系统注册</title>
+    <link th:href="@{css/register.css}" rel="stylesheet"/>
+    <script th:src="@{js/jquery-3.3.1.js}"></script>
+    <script th:src="@{js/register.js}"></script>
+
+</head>
+<body>
+   <div id="register-div-father">
+       <div id="register-main-div">
+           <table>
+               <tr>
+                   <td><input type="text" id="register-userId" placeholder="请输入用户ID"/></td>
+               </tr>
+               <tr>
+                   <td><input type="text" id="register-userName" placeholder="请输入用户名称"/></td>
+               </tr>
+               <tr>
+                  <td><input type="text" id="register-password" placeholder="请输入密码"/></td>
+               </tr>
+               <tr>
+                   <td><input type="radio" value="0" name="sex"/>男<input type="radio" value="1" name="sex"/>女</td>
+               </tr>
+               <tr>
+                   <td><input type="text" id="register-tel" placeholder="请输入手机号"/></td>
+               </tr>
+           </table>
+       </div>
+       <div>
+           <button id="register-button">注册</button>
+       </div>
+   </div>
+</body>
+</html>

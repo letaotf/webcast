@@ -1,0 +1,81 @@
+.goodsOperating-main{
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.goodsOperating-main p{
+    font-size: 20px;
+}
+
+.goodsOperating-top{
+    position: relative;
+    top:-5px;
+}
+
+
+.goodsOperating-center{
+    position: relative;
+    top:5px;
+}
+
+.goodsOperating-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 80px;
+}
+
+.goodsOperating-title p{
+    box-sizing: border-box;
+    padding-left: 500px;
+}
+
+.goodsOperating-search{
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.goodsOperating-add{
+    box-sizing: border-box;
+    padding-left: 950px;
+}
+
+.goodsOperating-button{
+    box-sizing: border-box;
+    padding-left: 700px;
+}
+
+.active{
+    color: #fff !important;
+    background: #009688 !important;
+}
+
+<!--添加商品-->
+
+.addGoods-name{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.addGoods-price{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.addGoods-img{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.addGoods-success{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.goodsOperating-table table th{
+    text-align: center;
+    background-color: #009688;
+}
+
+.goodsOperating-table td{
+    text-align: center;
+}

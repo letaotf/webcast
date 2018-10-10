@@ -1,0 +1,11 @@
+body{
+    background-image: url("../img/login.jpg");
+    background-size: cover;
+}
+
+button{
+    width: 200px;
+    height: 33px;
+}
+
+

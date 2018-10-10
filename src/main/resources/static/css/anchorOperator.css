@@ -1,0 +1,210 @@
+.wrapper-body .right{
+    width: 1100px;
+    height:100%;
+}
+
+/****************************投诉记录*****************************/
+
+.wrapper-body .right .user-operator .complain-record-templet{
+    height: 400px;
+}
+.wrapper-body .right .user-operator .complain-record-title{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 500px;
+}
+
+.wrapper-body .right .user-operator .complain-record-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+/****************************诚信值*****************************/
+
+.wrapper-body .right .user-operator .intergity-record-templet{
+    height: 500px;
+}
+
+.wrapper-body .right .user-operator .intergity-record-title{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 500px;
+}
+
+.wrapper-body .right .user-operator .intergity-value{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wrapper-body .right .user-operator .intergity-record-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+}
+
+/****************************发起投诉*****************************/
+
+.wrapper-body .right .user-operator .complain-info-templet{
+    height: 600px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.wrapper-body .right .user-operator .complain-info-title{
+    border-bottom: 1px solid #C6C6C6;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.wrapper-body .right .user-operator .add-complain{
+    box-sizing: border-box;
+    padding-top: 10px;
+    line-height: 40px;
+}
+
+.wrapper-body .right .user-operator .addComplain-success{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+/****************************用户信息*****************************/
+
+.wrapper-body .right .user-operator .anchor-templet{
+    box-sizing: border-box;
+    padding-left: 50px;
+}
+
+.wrapper-body .right .user-operator .asset-info-templet{
+    height: 500px;
+}
+
+.wrapper-body .right .user-operator .assetDetail-list-title{
+    border-bottom: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 550px;
+}
+
+.wrapper-body .right .user-operator .assetDetail-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 30px;
+
+}
+
+.assetDetail-table table th{
+    background-color: #009688;
+}
+
+.intergity-record-table table th{
+    background-color: #009688;
+}
+
+.complain-record-table table th{
+    background-color: #009688;
+}
+
+.wrapper-body .right .user-operator .assetDetail-button{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/****************************主播信息*****************************/
+
+.wrapper-body .right .user-operator .anchor-title{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 400px;
+    border-bottom: 1px solid #C6C6C6;
+}
+
+.wrapper-body .right .user-operator .compile-button{
+    width: 200px;
+    float: left;
+    box-sizing: border-box;
+    /*padding-top: 50px;*/
+    /*padding-left: 20px;*/
+    line-height: 80px;
+}
+
+.wrapper-body .right .user-operator .anchor-info{
+    height: 1000px;
+    box-sizing: border-box;
+    padding-top: 4px;
+}
+
+.wrapper-body .right .user-operator .anchor-info-list{
+    height: 100%;
+    float: left;
+
+}
+
+.wrapper-body .right .user-operator .user-img{
+    height: 150px;
+    width:150px;
+    border: 1px solid #eb7350;
+}
+
+.wrapper-body .right .user-operator .head{
+    float: left;
+}
+
+.wrapper-body .right .user-operator .head-img{
+    float: left;
+}
+
+.wrapper-body .right .user-operator .user-img{
+    float: left;
+}
+
+.wrapper-body .right .user-operator .head-button{
+    float: left;
+}
+
+
+.wrapper-body .right .user-operator .anchor-info-head{
+    width: 1000px;
+    height: 192px;
+    box-sizing: border-box;
+    padding-left: 50px;
+    border: 1px solid #C6C6C6;
+}
+
+.wrapper-body .right .user-operator .anchor-info-img{
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+.wrapper-body .right .anchor-info .anchor-info-div{
+    width: 1000px;
+    height: 327px;
+    border: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-left: 160px;
+    line-height: 40px;
+}
+
+.wrapper-body .right .anchor-info  .anchor-info-div2{
+    width: 1000px;
+    height: 253px;
+    border: 1px solid #C6C6C6;
+    box-sizing: border-box;
+    padding-left:160px;
+    line-height: 40px;
+}
+
+.user-img img{
+    width: 142px;
+    height: 139px;
+}

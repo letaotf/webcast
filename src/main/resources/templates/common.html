@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{css/commom.css}" rel="stylesheet"/>
+    <link th:href="@{css/login.css}" rel="stylesheet"/>
+    <script th:src="@{js/jquery-3.3.1.js}"></script>
+    <script th:src="@{js/outerjs/jquery-ui.min.js}"></script>
+    <link th:href="@{layui/css/layui.css}" rel="stylesheet"/>
+    <script th:src="@{layui/layui.js}"></script>
+    <script th:src="@{js/login.js}"></script>
+    <title>网络管理开放平台</title>
+</head>
+<body>
+<div id="main">
+    <!--top-->
+    <div id="header" onload="window._head.init();">
+        <div id="nav_test" class="head_nav">
+            <div class="logo-icon">
+               <div class="logo" style="margin: 11px 0px 0 0;"></div>
+            </div>
+            <div class="login-menu">
+                <div class="menu">
+                    <div class="tit_ac" id="index">
+                        <a href="javascript:void(0);"
+                           onclick="disp('http://localhost:8080/common.htm')">首页</a>
+                    </div>
+                </div>
+                <div class="login_zc">
+                    <div class="dl" id="login_icon">
+                        <div class="icon"></div>
+                        <div class="tit">登录</div>
+                    </div>
+                    <div class="dl" id="user_app">
+                        <div class="icon2"></div>
+                        <div class="tit">用户申请</div>
+                    </div>
+                </div>
+            </div>
+            <hr />
+        </div>
+    </div>
+
+    <div class="login-form">
+        <div class="login-user">
+            <span>用户名:</span>
+            <input type="text" value="" class="user-name icon input1" placeholder="请输入用户名称" />
+        </div>
+        <div class="login-password">
+            <span>密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+            <input type="password" value="" class="password icon input2" placeholder="请输入密码"/>
+        </div>
+        <div class="login-role">
+            <table>
+                <tr>
+                    <td style="width: 100px" >
+                        <input  type="radio" name="role" value="0" />
+                        <span>普通用户</span>
+                    </td>
+                    <td style="width: 100px" >
+                        <input  type="radio" name="role" value="1" />
+                        <span>网络主播</span>
+                    </td>
+                    <td style="width: 100px">
+                        <input  type="radio" name="role" value="2"/>
+                        <span>管理员</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="login-button">
+            <button class="layui-btn login">立即登录</button>
+        </div>
+        <div class="login-forget-password">
+            <a class="forget-password">忘记密码？</a>
+        </div>
+    </div>
+
+    <div class="forget-password-div">
+        <p style="font-size: 25px">修改密码</p>
+        <span style="font-size: 20px">用户电话:</span>
+        <input type="text" style="width: 300px;height:40px;" placeholder="请输入用户联系方式" class="user-info-tel" />
+        <br />
+        <span style="font-size: 20px">新&nbsp;&nbsp;密&nbsp;码:</span>
+        <input type="text" style="width: 300px;height:40px;" placeholder="请输入用户联系方式" class="new-password" />
+        <br />
+        <button class="forget layui-btn" style="width:200px;height: 40px">保存</button>
+    </div>
+
+    <div class="login-main">
+        <div id="login_bj" class="step_bj" style="display: none">
+
+        </div>
+        <div id="banner">
+            <div id="mainbody">
+                <!-- 代码 开始 -->
+                <div id="warp " style="background-color: #3e3e3e">
+                    <!-- 滚动图片 -->
+                    <div id="slides" class="banner_a">
+                        <div class="bannerImg">
+                            <div class="slides_container">
+                                <div id="banner_pic_1">
+                                    <a href="#"><img src="../img/true.jpg" /></a>
+                                </div>
+                                <div style="display: none;" id="banner_pic_2">
+                                    <a href="#"><img src="../img/banner01.jpg" /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!--快捷功能-->
+        <div id="jrkfpt">
+            <div class="jrkfpt_nav">
+                <div class="jrkfpt_tit01">网络直播管理平台构建新金融文明生态圈，开创互联网金融共赢新模式</div>
+            </div>
+        </div>
+
+        <div id="content">
+            <ul class="sortul">
+                <li title="暂时只支持企业应用">
+                    <a href="javascript:void(0);" >
+                        <p>
+                            <img src="../img/ico01.png" class="picGray" />
+                        </p>
+                        <h2>移动应用</h2>
+                        <p>网络直播管理<br/>提供移动端服务</p>
+                    </a>
+                </li>
+                <li title="暂时只支持企业应用">
+                    <a href="javascript:void(0);">
+                        <p>
+                            <img src="../img/ico02.png" class="picGray" title="暂时只支持企业应用" />
+                        </p>
+                        <h2>
+                            个人应用
+                        </h2>
+                        <p>网络直播管理<br/>提供PC端服务</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="typeList/typeList.do?cid=3">
+                        <p><img src="../img/ico03.png" />
+                        </p>
+                        <h2>平台应用</h2>
+                        <p>网络直播管理<br/>提供平台服务</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="register">
+       <div class="register-icon">
+           <div class="icon"></div>
+       </div>
+       <div class="layui-progress layui-progress-big tabs" lay-showpercent="true" lay-filter="demo">
+           <ul>
+               <li class="fill_email action tab_choose" >
+                   <span>设置登录名</span>
+               </li>
+               <li class="user_info">
+                   <span>填写账户信息</span>
+               </li>
+           </ul>
+           <div class="layui-progress-bar layui-bg-red slider-main" lay-percent="40%"></div>
+       </div>
+        <div class="content" id="fill_mail_content" >
+            <div class="form_group">
+                <div class="from_type">
+                    <ul>
+                        <li>
+                            <div class="form_item" id="phone_form">
+                                <span class="form_label">用户名:</span>
+                                <input class="form_text username icon" type="text" id="phone" placeholder="请输入用户名" />
+                                <label class="error_msg" id="phone_error"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <span class="form_label">密&nbsp;&nbsp;&nbsp;&nbsp;码:</span>
+                                <input class="form_text vCode icon short" type="text" id="vCode" placeholder="请输入密码"/>
+                                <span class="validate_code_label"></span>
+                                <label class="error_msg" id= "vcode_error_msg"></label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <span class="form_label">设置会员名:</span>
+                                <input class="form_text member icon" type="text" id="userName" placeholder="请输入用户名"/>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form_item">
+                                <span class="form_label">选择注册类别:</span>
+                                <div class="type-block">
+                                    <input type="radio" name="user-type" value="0" class="radio-type"/>
+                                    <span style="white-space:pre;">普通用户</span>
+                                    <input type="radio" name="user-type"  value="1" class="radio-type"/>
+                                    <span style="white-space:pre;">网络主播</span>
+                                    <input type="radio" name="user-type"  value="2" class="radio-type"/>
+                                    <span style="white-space:pre;">管理员</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="form_item_2">
+                <button class="layui-btn site-demo-active simple_but button1"  id="fill_phone" style="display: block;" data-type="setPercent">注册</button>
+            </div>
+        </div>
+
+       <div class="content-message">
+           <div class="form_group">
+               <div class="from_type">
+                   <div class="form_item">
+                       <span class="form_label">再次确认:</span>
+                       <input class="form_text password icon" type="password" id="verify" placeholder="请再次输入密码"/>
+                       <label class="error_msg"></label>
+                   </div>
+                   <div class="form_item">
+                       <span class="form_label">联系方式:</span>
+                       <input class="form_text tel icon" type="text" placeholder="请输入手机号"/>
+                       <label class="error_msg"></label>
+                   </div>
+                   <div class="form_item">
+                       <span class="form_label">性别:</span>
+                       <div class="type-block">
+                           <input type="radio" name="sex" value="0" />
+                           <span style="white-space:pre;">男</span>
+                           <input type="radio" name="sex" value="1" />
+                           <span style="white-space:pre;">女</span>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div class="content-admin">
+           <div class="form_group" >
+               <div class="form-type">
+                   <div class="form_item">
+                       <span class="form_label">再次确认:</span>
+                       <input class="form_text password icon" type="password"  placeholder="请再次输入密码"/>
+                       <label class="error_msg"></label>
+                   </div>
+                   <div class="form_item">
+                       <span class="form_label">联系方式:</span>
+                       <input class="form_text telAnchor icon" type="text" placeholder="请输入手机号"/>
+                       <label class="error_msg"></label>
+                   </div>
+                   <div class="form_item">
+                       <span class="form_label">身份证:</span>
+                       <input class="form_text idCard icon" type="text" placeholder="输入身份证号"/>
+                       <label class="error_msg"></label>
+                   </div>
+                   <div class="form_item">
+                       <span class="form_label">身份证照片:</span>
+                       <input class="form_text idCard-img icon" type="text" />
+                       <label class="error_msg"></label>
+                   </div>
+                   <div class="form_item">
+                       <span class="form_label">性别:</span>
+                       <div class="type-block">
+                           <input type="radio" name="sex" value="0"/>
+                           <span style="white-space:pre;">男</span>
+                           <input type="radio" name="sex" value="1"/>
+                           <span style="white-space:pre;">女</span>
+                       </div>
+                   </div>
+                   <div class="form_item broadcastType">
+                       <span>节目类型：</span>
+                       <select class="broadcast-type" style="width: 150px;height: 25px">
+                           <option value="" selected="selected">请选择节目类型</option>
+                           <option value="1">网游竞技</option>
+                           <option value="2">手游休闲</option>
+                           <option value="3">休闲娱乐</option>
+                           <option value="4">单机热门</option>
+                           <option value="5">科学教育</option>
+                       </select>
+                   </div>
+                   <div class="form_item broadcastType-detail">
+                       <span>节目名称：</span>
+                       <input type="text" value="" placeholder="请输入节目名称" class="type-detail-name"/>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+
+    <div id="footer">
+        <div class="footer_nav">
+            <div class="fot_ti">
+                <div>
+                    版权所有 © TF网络直播（集团）股份有限公司 未经许可不得复制、转载或摘编，违者必究!
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

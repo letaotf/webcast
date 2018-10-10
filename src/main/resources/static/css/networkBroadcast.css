@@ -1,0 +1,86 @@
+.broadcastType-main{
+    box-sizing: border-box;
+    height:100%;
+    padding-top: 30px;
+}
+
+.broadcastType-div{
+    box-sizing:border-box;
+    padding-left: 50px;
+}
+
+.broadcastType-col{
+    float: left;
+    position: relative;
+    top:10px;
+}
+
+.add-broadcastType{
+    width: 20px;
+    box-sizing: border-box;
+}
+
+.broadcastType-table{
+    box-sizing: border-box;
+    padding-left: 100px;
+    padding-top: 10px;
+}
+
+.broadcastType-table table th{
+    text-align: center;
+}
+
+.broadcastType-table td{
+    text-align: center;
+}
+
+.title-div p{
+    font-size: 20px;
+    box-sizing: border-box;
+    padding-left: 500px;
+}
+
+.active{
+    color: #fff !important;
+    background: #009688 !important;
+}
+
+.broadcastType-button{
+    box-sizing: border-box;
+    padding-left: 800px;
+}
+
+.add-broadcastType-div{
+    box-sizing: border-box;
+    padding-left: 1000px;
+}
+
+.broadcastTypeDetail-no{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastTypeDetail-select{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastType-name-detail{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastType-content-detail{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastType-success-detail{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastType-table table th{
+    text-align: center;
+    background-color: #009688;
+}

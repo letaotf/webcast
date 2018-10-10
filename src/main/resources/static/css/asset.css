@@ -1,0 +1,103 @@
+.asset-main{
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.asset-title{
+    box-sizing: border-box;
+    padding-left: 500px;
+}
+
+.asset-main p{
+    font-size: 20px;
+}
+
+.asset-search{
+    box-sizing: border-box;
+    padding-left: 220px;
+}
+
+.asset-search input{
+    width: 200px;
+    height:38px;
+}
+
+.asset-table{
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+.asset-table table th{
+    text-align: center;
+}
+
+.asset-table td{
+    text-align: center;
+}
+
+.active{
+    color: #fff !important;
+    background: #009688 !important;
+}
+
+.asset-button{
+    box-sizing: border-box;
+    padding-left:800px;
+}
+
+.assetDetail-main{
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.assetDetail-main p{
+    font-size: 20px;
+}
+
+.assetDetail-title{
+    box-sizing: border-box;
+    padding-left: 500px;
+}
+
+.assetDetail-catalogue{
+    box-sizing: border-box;
+    padding-left: 260px;
+}
+
+table th{
+    text-align: center;
+    background-color: #009688;
+}
+
+.assetDetail-search{
+    box-sizing: border-box;
+    padding-left: 141px;
+}
+
+.assetDetail-table{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.assetDetail-table-div{
+    height:500px;
+}
+
+.assetDetail-table td{
+    text-align: center;
+}
+
+.assetDetail-table table th{
+    text-align: center;
+}
+
+.assetDetail-button{
+    box-sizing: border-box;
+    padding-left:1000px;
+}
+
+.assetNo-data a:hover{
+    color:#009688;
+}

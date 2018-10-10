@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.NetworkAnchorMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.NetworkAnchorDO" >
+    <id column="network_anchor_id" property="networkAnchorId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="identity_card" property="identityCard" jdbcType="VARCHAR" />
+    <result column="audit_status" property="auditStatus" jdbcType="INTEGER" />
+    <result column="card_img_path" property="cardImgPath" jdbcType="VARCHAR" />
+    <result column="network_broadcast_type_detail_id" property="networkBroadcastTypeDetailId" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    network_anchor_id, user_id, identity_card, audit_status, card_img_path, network_broadcast_type_detail_id, 
+    status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from web_network_anchor
+    where network_anchor_id = #{networkAnchorId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from web_network_anchor
+    where network_anchor_id = #{networkAnchorId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taofeng.webcast.dao.domain.NetworkAnchorDO" >
+    insert into web_network_anchor (network_anchor_id, user_id, identity_card, 
+      audit_status, card_img_path, network_broadcast_type_detail_id, 
+      status, gmt_create, gmt_modified
+      )
+    values (#{networkAnchorId,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{identityCard,jdbcType=VARCHAR}, 
+      #{auditStatus,jdbcType=INTEGER}, #{cardImgPath,jdbcType=VARCHAR}, #{networkBroadcastTypeDetailId,jdbcType=BIGINT}, 
+      #{status,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.taofeng.webcast.dao.domain.NetworkAnchorDO" keyProperty="networkAnchorId" useGeneratedKeys="true">
+    insert into web_network_anchor
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="networkAnchorId != null" >
+        network_anchor_id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="identityCard != null" >
+        identity_card,
+      </if>
+      <if test="auditStatus != null" >
+        audit_status,
+      </if>
+      <if test="cardImgPath != null" >
+        card_img_path,
+      </if>
+      <if test="networkBroadcastTypeDetailId != null" >
+        network_broadcast_type_detail_id,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="networkAnchorId != null" >
+        #{networkAnchorId,jdbcType=BIGINT},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="identityCard != null" >
+        #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatus != null" >
+        #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="cardImgPath != null" >
+        #{cardImgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="networkBroadcastTypeDetailId != null" >
+        #{networkBroadcastTypeDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taofeng.webcast.dao.domain.NetworkAnchorDO" >
+    update web_network_anchor
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="identityCard != null" >
+        identity_card = #{identityCard,jdbcType=VARCHAR},
+      </if>
+      <if test="auditStatus != null" >
+        audit_status = #{auditStatus,jdbcType=INTEGER},
+      </if>
+      <if test="cardImgPath != null" >
+        card_img_path = #{cardImgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="networkBroadcastTypeDetailId != null" >
+        network_broadcast_type_detail_id = #{networkBroadcastTypeDetailId,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where network_anchor_id = #{networkAnchorId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taofeng.webcast.dao.domain.NetworkAnchorDO" >
+    update web_network_anchor
+    set user_id = #{userId,jdbcType=BIGINT},
+      identity_card = #{identityCard,jdbcType=VARCHAR},
+      audit_status = #{auditStatus,jdbcType=INTEGER},
+      card_img_path = #{cardImgPath,jdbcType=VARCHAR},
+      network_broadcast_type_detail_id = #{networkBroadcastTypeDetailId,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where network_anchor_id = #{networkAnchorId,jdbcType=BIGINT}
+  </update>
+</mapper>

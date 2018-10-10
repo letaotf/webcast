@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-公告管理</title>
+    <link th:href="@{css/notice.css}" rel="stylesheet"/>
+    <script th:src="@{js/notice.js}"></script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div class="notice-main">
+        <div class="notice-title">
+            <p>公告管理</p>
+        </div>
+        <hr/>
+        <div class="notice-content">
+            <div class="notice-title-span">
+                <span>标题:</span>
+                <input type="text" placeholder="请输入标题" class="notice-title-input"  style="height: 38px; width:200px;"/>
+            </div>
+            <div class="notice-title-textarea">
+                <textarea style="height: 200px;width: 400px;" placeholder="字数1000以内" class="notice-content-textarea"></textarea>
+            </div>
+            <div class="notice-success">
+                <input type="button" value="发送" style="height: 40px; width:100px;" class="notice-success-button layui-btn"/>
+            </div>
+        </div>
+
+    </div>
+</th:block>
+</body>
+</html>

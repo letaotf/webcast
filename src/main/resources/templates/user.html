@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8"/>
+    <title>网络直播管理-网络主播管理</title>
+    <!--获取静态的js文件-->
+    <link th:href="@{css/user.css}" rel="stylesheet"/>
+    <script th:src="@{js/user.js}"></script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div id="user-list">
+        <div id="user-title-div">
+            <p>网络主播审核</p>
+        </div>
+        <div id="user-condition-div">
+            <span>用户名称:</span>
+            <input type="text" placeholder="请输入用户名称" value="" class="user-name" style="width: 150px;height: 40px"/>
+            <span>用户编号:</span>
+            <input type="text" placeholder="请输入用户编号" value="" class="user-no" style="width: 150px;height: 40px"/>
+            <span>申请时间:</span>
+            <input type="text" placeholder="请输入申请时间" value="" class="user-time" style="width: 150px;height: 40px"/>
+            <span>审核状态:</span>
+            <select class="status-select" style="width: 150px;height: 40px">
+                <option value="" selected="selected">请输入审核状态</option>
+                <option value="0">通过</option>
+                <option value="1">不通过</option>
+            </select>
+            <button style="width: 100px;height: 40px" class="query layui-btn"><span>搜索</span></button>
+        </div>
+        <hr/>
+        <div id="user-list-page">
+            <div id="user-table">
+                <table style="width: 1000px;" border='1' class="table">
+                    <thead>
+                    <tr style="height: 50px;">
+                        <th style="width:150px;">用户编号</th>
+                        <th style="width:70px;">姓名</th>
+                        <th style="width:70px;">性别</th>
+                        <th style="width:100px;">主播类型</th>
+                        <th style="width:150px;">联系方式</th>
+                        <th style="width:200px;">身份证</th>
+                        <th style="width:100px;">申请时间</th>
+                        <th style="width:220px;">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div id="pager-wrapper">
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

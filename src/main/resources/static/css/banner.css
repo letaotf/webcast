@@ -1,0 +1,51 @@
+/*BODY {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px;
+}*/
+img {border:0 none;}
+ul,li{ list-style-type:none;}
+
+.index_bg01 {
+    background:#5db872;
+}
+.index_bg02 {
+    BACKGROUND: url(../img/banner_bg02.gif);
+}
+
+.index_bg05 {
+
+    background:#ffda89;
+}
+#warp {
+    padding:0px; margin:0px; width:100%; height:396px; position:relative;
+}
+.banner_a {
+    Z-INDEX:99; MARGIN: 0px auto; WIDTH:1000px; HEIGHT: 396px;
+}
+
+.bannerImg {
+    POSITION: relative; WIDTH: 994px; FLOAT: left; margin:0; padding:0;
+}
+.bannerImg .bannerPage {
+    POSITION: absolute; TOP: 300px; LEFT: 420px
+}
+.bannerImg .bannerPage A {
+    MARGIN-RIGHT: 2px
+}
+.bannerImg .bannerPage A IMG {
+    VERTICAL-ALIGN: middle
+}
+.slides_container {
+    POSITION: relative; WIDTH: 994px; OVERFLOW: hidden
+}
+.pagination {
+    margin-top:75px; right:0px; position:relative;
+}
+.pagination LI {
+    MARGIN: 0px 1px; FLOAT: left
+}
+.pagination LI A {
+    BACKGROUND-IMAGE: url(../img/pagination.png); WIDTH: 15px; DISPLAY: block; BACKGROUND-POSITION: 0px -1px; FLOAT: left; HEIGHT: 0px; OVERFLOW: hidden; PADDING-TOP: 12px
+}
+.pagination LI.current A {
+    BACKGROUND-POSITION: 0px -18px
+}

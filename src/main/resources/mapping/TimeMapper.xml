@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.TimeMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.TimeDO" >
+    <id column="time_id" property="timeId" jdbcType="BIGINT" />
+    <result column="time_type" property="timeType" jdbcType="BIGINT" />
+    <result column="description" property="description" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    time_id, time_type, description, status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from web_time
+    where time_id = #{timeId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from web_time
+    where time_id = #{timeId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taofeng.webcast.dao.domain.TimeDO" >
+    insert into web_time (time_id, time_type, description, 
+      status, gmt_create, gmt_modified
+      )
+    values (#{timeId,jdbcType=BIGINT}, #{timeType,jdbcType=BIGINT}, #{description,jdbcType=BIGINT}, 
+      #{status,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.taofeng.webcast.dao.domain.TimeDO" >
+    insert into web_time
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="timeId != null" >
+        time_id,
+      </if>
+      <if test="timeType != null" >
+        time_type,
+      </if>
+      <if test="description != null" >
+        description,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="timeId != null" >
+        #{timeId,jdbcType=BIGINT},
+      </if>
+      <if test="timeType != null" >
+        #{timeType,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        #{description,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taofeng.webcast.dao.domain.TimeDO" >
+    update web_time
+    <set >
+      <if test="timeType != null" >
+        time_type = #{timeType,jdbcType=BIGINT},
+      </if>
+      <if test="description != null" >
+        description = #{description,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where time_id = #{timeId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taofeng.webcast.dao.domain.TimeDO" >
+    update web_time
+    set time_type = #{timeType,jdbcType=BIGINT},
+      description = #{description,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where time_id = #{timeId,jdbcType=BIGINT}
+  </update>
+</mapper>

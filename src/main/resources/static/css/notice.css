@@ -1,0 +1,31 @@
+.notice-main{
+    box-sizing: border-box;
+    padding-top: 30px;
+}
+
+.notice-main p{
+    font-size: 20px;
+}
+
+
+.notice-title-textarea{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.notice-success{
+    box-sizing: border-box;
+    padding-top: 20px;
+}
+
+.notice-title{
+    box-sizing: border-box;
+    padding-left: 480px;
+}
+
+.notice-content{
+    height: 500px;
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 400px;
+}

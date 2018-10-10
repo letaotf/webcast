@@ -1,0 +1,37 @@
+.goodsDetail-main{
+    position: relative;
+    top:30px;
+    width: 1100px;
+}
+
+.goodsDetail-title{
+    box-sizing: border-box;
+    padding-left: 450px;
+}
+
+.goodsDetail-title p{
+    font-size: 20px;
+}
+
+.goodsDetail-catalogue{
+    box-sizing: border-box;
+    padding-left: 144px;
+}
+
+.goodsDetail-list{
+    box-sizing: border-box;
+    padding-left: 72px;
+}
+
+.goodsDetail-list-div{
+    box-sizing: border-box;
+    padding-left: 15px;
+    padding-top: 10px;
+    float: left;
+}
+
+.goodsDetail-button{
+    box-sizing: border-box;
+    padding-top: 270px;
+    padding-left: 800px;
+}

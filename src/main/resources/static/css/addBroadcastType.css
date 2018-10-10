@@ -1,0 +1,68 @@
+.addBroadcastType-select{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.addBroadcastType-name{
+    box-sizing: border-box;
+    padding-top: 10px;;
+}
+
+.addBroadcastType-content{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.addBroadcastType-success{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.network{
+    background-color: deepskyblue;
+}
+
+<!--更新update页面-->
+
+.updateBroadcastType-select{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.updateBroadcastType-name{
+    box-sizing: border-box;
+    padding-top: 10px;;
+}
+
+.updateBroadcastType-content{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.updateBroadcastType-success{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+<!--详情页面-->
+
+.broadcastTypeDetail-select{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastType-name-detail{
+    box-sizing: border-box;
+    padding-top: 10px;;
+}
+
+.broadcastType-content-detail{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+.broadcastType-success-detail{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-商品列表详情</title>
+    <link th:href="@{css/goodsDetail.css}" rel="stylesheet"/>
+    <script th:src="@{js/goodsDetail.js}"></script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div class="goodsDetail-main">
+        <div class="goodsDetail-title">
+            <p>商品列表详情</p>
+        </div>
+        <hr/>
+        <div class="goodsDetail-catalogue">
+            <div class="goodsDetail-catalogue-assetNO">
+                <span>商品名称:</span>
+                <input type="text" placeholder="请输入商品名称" class="goodsDetail-name" style="width: 150px;height:38px;"/>
+                <span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</span>
+                <input type="text" placeholder="请输入价格" class="goodsDetail-upPrice"  style="width: 150px;height:38px;"/>
+                <span>-</span>
+                <input type="text" placeholder="请输入价格" class="goodsDetail-underPrice"  style="width: 100px;height:38px;"/>
+                <span>上架时间:</span>
+                <input type="text" placeholder="请输入上架时间" class="goodsDetail-time"  style="width: 100px;height:38px;"/>
+                <button style="width: 100px;height:40px;" class="goodsDetail-search layui-btn">搜索</button>
+            </div>
+        </div>
+        <hr/>
+        <div class="goodsDetail-list">
+        </div>
+        <div class="goodsDetail-button">
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

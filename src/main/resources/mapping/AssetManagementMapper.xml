@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.AssetManagementMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.AssetManagementDO" >
+    <id column="asset_id" property="assetId" jdbcType="BIGINT" />
+    <result column="asset_no" property="assetNo" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="fish_ball_num" property="fishBallNum" jdbcType="INTEGER" />
+    <result column="fish_ball_value" property="fishBallValue" jdbcType="DOUBLE" />
+    <result column="flower_num" property="flowerNum" jdbcType="INTEGER" />
+    <result column="flower_value" property="flowerValue" jdbcType="DOUBLE" />
+    <result column="rocket_num" property="rocketNum" jdbcType="INTEGER" />
+    <result column="rocket_value" property="rocketValue" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    asset_id, asset_no, user_id, fish_ball_num, fish_ball_value, flower_num, flower_value, 
+    rocket_num, rocket_value, status, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from web_asset_management
+    where asset_id = #{assetId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from web_asset_management
+    where asset_id = #{assetId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.taofeng.webcast.dao.domain.AssetManagementDO" >
+    insert into web_asset_management (asset_id, asset_no, user_id, 
+      fish_ball_num, fish_ball_value, flower_num, 
+      flower_value, rocket_num, rocket_value, 
+      status, gmt_create, gmt_modified
+      )
+    values (#{assetId,jdbcType=BIGINT}, #{assetNo,jdbcType=VARCHAR}, #{userId,jdbcType=BIGINT}, 
+      #{fishBallNum,jdbcType=INTEGER}, #{fishBallValue,jdbcType=DOUBLE}, #{flowerNum,jdbcType=INTEGER}, 
+      #{flowerValue,jdbcType=DOUBLE}, #{rocketNum,jdbcType=INTEGER}, #{rocketValue,jdbcType=DOUBLE}, 
+      #{status,jdbcType=INTEGER}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.taofeng.webcast.dao.domain.AssetManagementDO" >
+    insert into web_asset_management
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="assetId != null" >
+        asset_id,
+      </if>
+      <if test="assetNo != null" >
+        asset_no,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="fishBallNum != null" >
+        fish_ball_num,
+      </if>
+      <if test="fishBallValue != null" >
+        fish_ball_value,
+      </if>
+      <if test="flowerNum != null" >
+        flower_num,
+      </if>
+      <if test="flowerValue != null" >
+        flower_value,
+      </if>
+      <if test="rocketNum != null" >
+        rocket_num,
+      </if>
+      <if test="rocketValue != null" >
+        rocket_value,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="assetId != null" >
+        #{assetId,jdbcType=BIGINT},
+      </if>
+      <if test="assetNo != null" >
+        #{assetNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="fishBallNum != null" >
+        #{fishBallNum,jdbcType=INTEGER},
+      </if>
+      <if test="fishBallValue != null" >
+        #{fishBallValue,jdbcType=DOUBLE},
+      </if>
+      <if test="flowerNum != null" >
+        #{flowerNum,jdbcType=INTEGER},
+      </if>
+      <if test="flowerValue != null" >
+        #{flowerValue,jdbcType=DOUBLE},
+      </if>
+      <if test="rocketNum != null" >
+        #{rocketNum,jdbcType=INTEGER},
+      </if>
+      <if test="rocketValue != null" >
+        #{rocketValue,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.taofeng.webcast.dao.domain.AssetManagementDO" >
+    update web_asset_management
+    <set >
+      <if test="assetNo != null" >
+        asset_no = #{assetNo,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=BIGINT},
+      </if>
+      <if test="fishBallNum != null" >
+        fish_ball_num = #{fishBallNum,jdbcType=INTEGER},
+      </if>
+      <if test="fishBallValue != null" >
+        fish_ball_value = #{fishBallValue,jdbcType=DOUBLE},
+      </if>
+      <if test="flowerNum != null" >
+        flower_num = #{flowerNum,jdbcType=INTEGER},
+      </if>
+      <if test="flowerValue != null" >
+        flower_value = #{flowerValue,jdbcType=DOUBLE},
+      </if>
+      <if test="rocketNum != null" >
+        rocket_num = #{rocketNum,jdbcType=INTEGER},
+      </if>
+      <if test="rocketValue != null" >
+        rocket_value = #{rocketValue,jdbcType=DOUBLE},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where asset_id = #{assetId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.taofeng.webcast.dao.domain.AssetManagementDO" >
+    update web_asset_management
+    set asset_no = #{assetNo,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=BIGINT},
+      fish_ball_num = #{fishBallNum,jdbcType=INTEGER},
+      fish_ball_value = #{fishBallValue,jdbcType=DOUBLE},
+      flower_num = #{flowerNum,jdbcType=INTEGER},
+      flower_value = #{flowerValue,jdbcType=DOUBLE},
+      rocket_num = #{rocketNum,jdbcType=INTEGER},
+      rocket_value = #{rocketValue,jdbcType=DOUBLE},
+      status = #{status,jdbcType=INTEGER},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where asset_id = #{assetId,jdbcType=BIGINT}
+  </update>
+</mapper>

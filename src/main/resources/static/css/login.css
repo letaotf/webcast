@@ -1,0 +1,81 @@
+.login-form{
+    box-sizing: border-box;
+    padding-top: 48px;
+    padding-left: 500px;
+}
+
+.login-user span{
+    font-size: 20px;
+}
+
+.login-password span{
+    font-size: 20px;
+}
+
+.login-user .user-name{
+    width: 200px;
+    height: 40px;
+}
+
+.login-password .password{
+    width: 200px;
+    height: 35px;
+}
+
+.login-button button{
+    width: 290px;
+    height: 35px;
+}
+
+.login-form .login-user .icon{
+    background: url("../img/login_user.gif") no-repeat;
+    background-position: 7px 10px;
+}
+
+.login-form .login-user .input1{
+    width: 19%;
+    height: 20px;
+    padding: 8px 8px 8px 35px;
+    border: 1px solid #e7e7e7;
+    font-size: 14px;
+    color: #444;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+.login-form .login-password .icon{
+    background: url("../img/login_user.gif") no-repeat;
+    background-position: 7px -45px;
+}
+
+
+.login-form .login-password .input2{
+    width: 19%;
+    height: 20px;
+    padding: 8px 8px 8px 35px;
+    border: 1px solid #e7e7e7;
+    font-size: 14px;
+    color: #444;
+    line-height: 22px;
+    margin-bottom: 15px;
+}
+
+.login-forget-password{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 230px;
+}
+
+.login-role{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-节目管理</title>
+    <link th:href="@{css/networkBroadcast.css}" rel="stylesheet"/>
+    <link th:href="@{css/addBroadcastType.css}" rel="stylesheet"/>
+    <script th:src="@{js/networkBroadcast.js}"></script>
+    <script>
+        $(function() {
+            $(".addBroadcastType-main").dialog({
+                width: 500,
+                height: 420,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".updateBroadcastType-main").dialog({
+                width: 500,
+                height: 420,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".broadcastTypeDetail-main").dialog({
+                width: 500,
+                height: 420,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".add-broadcastType").click(function() {
+                $(".select-type").val('');
+                $(".typeDetailName").val('');
+                $(".briefIntroduction").val('');
+                $( ".addBroadcastType-main" ).dialog("open");
+            });
+        });
+
+    </script>
+</head>
+<body>
+   <th:block layout:fragment="right-fragment">
+       <div class="broadcastType-main">
+           <div class="title-div">
+               <p>节目类型清单</p>
+           </div>
+           <hr />
+           <div class="broadcastType-div">
+               <span>节目类型：</span>
+               <select class="broadcastType" style="width: 200px;height: 38px">
+                   <option value="" selected="selected">请选择节目类型</option>
+                   <option value="1">网游竞技</option>
+                   <option value="2">手游休闲</option>
+                   <option value="3">休闲娱乐</option>
+                   <option value="4">单机热门</option>
+                   <option value="5">科学教育</option>
+               </select>
+               <button style="width: 100px;height: 40px;" class="search-broadcastType layui-btn">搜索</button>
+           </div>
+           <hr />
+           <div class="add-broadcastType-div">
+               <button class="add-broadcastType layui-btn" style="width: 100px;height: 40px;">添加</button>
+           </div>
+           <div class="broadcastType-table">
+               <table style="width: 1000px;" border='1' class="table">
+                   <thead>
+                       <tr style="height: 50px;">
+                           <th style="width: 100px;">节目编号</th>
+                           <th style="width: 100px;">节目名称</th>
+                           <th style="width: 400px;">节目简介</th>
+                           <th style="width: 200px;">创建时间</th>
+                           <th >操作</th>
+                       </tr>
+                   </thead>
+                   <tbody>
+                   </tbody>
+               </table>
+           </div>
+           <div class="broadcastType-button">
+           </div>
+           <div class="addBroadcastType-main" title="添加节目">
+               <div class="addBroadcastType-select">
+                   <span>节目类型：</span>
+                   <select class="select-type" style="width: 150px;height: 25px">
+                       <option value="" selected="selected">请选择节目类型</option>
+                       <option value="1">网游竞技</option>
+                       <option value="2">手游休闲</option>
+                       <option value="3">休闲娱乐</option>
+                       <option value="4">单机热门</option>
+                       <option value="5">科学教育</option>
+                   </select>
+               </div>
+               <div class="addBroadcastType-name">
+                   <span>节目名称:</span>
+                   <input type="text" placeholder="请输入节目名称" class="typeDetailName"/>
+               </div>
+               <div class="addBroadcastType-content">
+                   <span>节目简介:</span>
+                   <div class="addBroadcastType-content textarea">
+                       <textarea class="briefIntroduction" style="height: 200px;width: 400px;" placeholder="字数1000以内"></textarea>
+                   </div>
+               </div>
+               <div class="addBroadcastType-success">
+                   <input type="button" value="保存" style="height: 40px; width:100px;" class="saveBroadcastType layui-btn"/>
+               </div>
+           </div>
+           <div class="updateBroadcastType-main" title="更新节目">
+               <div class="updateBroadcastType-select">
+                   <span>节目类型：</span>
+                   <select class="update-select-type" style="width: 150px;height: 25px">
+                       <option value="" selected="selected">请选择节目类型</option>
+                       <option value="1">网游竞技</option>
+                       <option value="2">手游休闲</option>
+                       <option value="3">休闲娱乐</option>
+                       <option value="4">单机热门</option>
+                       <option value="5">科学教育</option>
+                   </select>
+               </div>
+               <div class="updateBroadcastType-name">
+                   <span>节目名称:</span>
+                   <input type="text" placeholder="请输入节目名称" class="updateTypeDetailName"/>
+               </div>
+               <div class="updateBroadcastType-content">
+                   <span>节目简介:</span>
+                   <div class="updateBroadcastType-content textarea">
+                       <textarea class="updatebriefIntroduction" style="height: 200px;width: 400px;" placeholder="字数1000以内"></textarea>
+                   </div>
+               </div>
+               <div class="updateBroadcastType-success">
+                   <input type="button" value="保存" style="height: 40px; width:100px;" class="updateBroadcastType layui-btn"/>
+               </div>
+           </div>
+           <div class="broadcastTypeDetail-main" title="节目详情">
+               <div class=".broadcastTypeDetail-no">
+                   <span>节目编号:</span>
+                   <input type="text" class="network-no" disabled="disabled"/>
+               </div>
+               <div class="broadcastTypeDetail-select">
+                   <span>节目类型：</span>
+                   <input type="text" class="select-type-detail" disabled="disabled"/>
+               </div>
+               <div class="broadcastType-name-detail">
+                   <span>节目名称:</span>
+                   <input type="text" class="updateTypeDetailName" disabled="disabled"/>
+               </div>
+               <div class="broadcastType-content-detail">
+                   <span>节目简介:</span>
+                   <div class="broadcastType-content-detail textarea">
+                       <textarea type="text" class="briefIntroductionDetail" style="height: 200px;width: 400px;" placeholder="字数1000以内" disabled="disabled"></textarea>
+                   </div>
+               </div>
+               <div class="broadcastType-success-detail">
+                   <input type="text" class="broadcastType-detail-time" disabled="disabled"/>
+               </div>
+           </div>
+       </div>
+   </th:block>
+</body>
+</html>

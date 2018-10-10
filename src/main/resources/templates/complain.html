@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-投诉列表</title>
+    <link th:href="@{css/complain.css}" rel="stylesheet"/>
+    <script th:src="@{js/complain.js}"></script>
+    <script>
+        $(function() {
+            $(".addComplain-main").dialog({
+                width: 500,
+                height: 450,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".complain-rank").dialog({
+                width: 500,
+                height: 420,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".complain-add-input").click(function() {
+                $(".addComplain-name-input").val('');
+                $(".addComplain-defendantUserName-input").val('');
+                $(".addGoods-content-textarea").val('');
+                $( ".addComplain-main" ).dialog("open");
+            });
+        });
+    </script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div class="complain-main">
+        <div class="complain-title">
+            <p>投诉列表</p>
+        </div>
+        <hr/>
+        <div class="complain-catalogue">
+            <span>用户编号:</span>
+            <input type="text" placeholder="请输入资产编号" value="" class="complain-userNO" style="width: 150px;height:40px;"/>
+            <span>被投诉人编号:</span>
+            <input type="text" placeholder="请输入姓名" value="" class="complain-defendantUserNo" style="width: 150px;height:40px;"/>
+            <span>时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;间:</span>
+            <input type="text" placeholder="请输入时间" value="" class="complain-complainDate" style="width: 150px;height:40px;" disabled="disabled"/>
+            <button style="width: 100px;height:40px;" class="search-complain layui-btn">搜索</button>
+        </div>
+        <hr/>
+        <div class="complain-add-div">
+            <input type="button" value="添加" class="complain-add-input layui-btn" style="width: 100px;height:40px;"/>
+        </div>
+        <div class="complain-table">
+            <table style="width: 1100px;" border='1' class="table">
+                <thead>
+                <tr style="height: 50px;">
+                    <th>用户编号</th>
+                    <th style="width: 70px">姓名</th>
+                    <th>联系方式</th>
+                    <th>被投诉用户编号</th>
+                    <th>姓名</th>
+                    <th>联系方式</th>
+                    <th style="width: 134px">时间</th>
+                    <th>投诉内容</th>
+                    <th>投诉等级</th>
+                    <th style="width: 134px">操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="complain-button">
+        </div>
+        <div class="addComplain-main" title="添加投诉">
+            <div class="addComplain-name">
+                <span>本&nbsp;&nbsp;&nbsp;人&nbsp;&nbsp;姓&nbsp;&nbsp;名:</span>
+                <input type="text" placeholder="请输入本人姓名" class="addComplain-name-input" style="width: 150px;height:40px;"/>
+            </div>
+            <div class="addComplain-defendantUserName">
+                <span>被投诉人姓名:</span>
+                <input type="text" placeholder="请输入被投诉人姓名" class="addComplain-defendantUserName-input" style="width: 150px;height:40px;"/>
+            </div>
+            <div class="addComplain-reason">
+                <span>投诉原因:</span>
+                <div class="addGoods-content">
+                    <textarea class="addGoods-content-textarea" style="height: 200px;width: 400px;" placeholder="字数1000以内"></textarea>
+                </div>
+            </div>
+            <div class="addComplain-success">
+                <input type="button" value="保存" style="height: 40px; width:100px;" class="addComplain-success-button layui-btn"/>
+            </div>
+        </div>
+        <div class="complain-rank">
+            <div class="complain-rank-select">
+                <span>投诉等级:</span>
+                <select class="rank-select" style="width: 150px;height: 40px">
+                    <option value="" selected="selected">请输入等级</option>
+                    <option value="1">等级一</option>
+                    <option value="2">等级二</option>
+                    <option value="3">等级三</option>
+                </select>
+            </div>
+            <span>&nbsp;&nbsp;&nbsp;原因:</span>
+            <div class="complain-rank-reason">
+                <textarea class="complain-rank-textarea" style="height: 200px;width: 400px;" placeholder="字数1000以内"></textarea>
+            </div>
+            <div class="complain-rank-success">
+                <input type="button" value="保存" style="height: 40px; width:100px;" class="complain-rank-button layui-btn"/>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

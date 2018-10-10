@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.ext.UserExtMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.UserDO" >
+    <id column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="user_no" property="userNo" jdbcType="VARCHAR" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_head_img" property="userHeadImg" jdbcType="VARCHAR" />
+    <result column="password" property="password" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="INTEGER" />
+    <result column="user_tel" property="userTel" jdbcType="VARCHAR" />
+    <result column="user_sex" property="userSex" jdbcType="INTEGER" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    user_id, user_no, user_name, user_head_img, password, user_type, user_tel, user_sex,
+    status, gmt_create, gmt_modified
+  </sql>
+
+  <sql id="Query_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="Update_By_Query_Where_Clause">
+    <where>
+      <foreach collection="query.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="MysqlDialectSuffix">
+    <if test="pageOffset &gt;= 0 and pageSize &gt; 0">
+      <![CDATA[ LIMIT #{pageOffset,jdbcType=INTEGER}, #{pageSize,jdbcType=INTEGER} ]]>
+    </if>
+  </sql>
+
+  <select id="selectUserByKeyLike" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM web_user
+    where status = 1
+    <if test="key1 != null">
+      and user_name LIKE ${key1}
+    </if>
+    <if test="key2 != null">
+      and user_no LIKE ${key2}
+    </if>
+  </select>
+
+  <select id="selectByQuery" parameterType="com.taofeng.webcast.dao.query.UserQuery" resultMap="BaseResultMap">
+  SELECT
+  <if test="distinct">
+    distinct
+  </if>
+  <include refid="Base_Column_List" />
+  FROM web_user
+  <if test="_parameter != null">
+    <include refid="Query_Where_Clause" />
+  </if>
+  <if test="orderByClause != null">
+    order by ${orderByClause}
+  </if>
+  <include refid="MysqlDialectSuffix"/>
+</select>
+
+  <select id="countByQuery" parameterType="com.taofeng.webcast.dao.query.UserQuery" resultType="java.lang.Integer">
+    select count(*) from web_user
+    <if test="_parameter != null">
+      <include refid="Query_Where_Clause" />
+    </if>
+  </select>
+
+  <select id="selectUserIdByName" parameterType="java.lang.String" resultType="java.lang.Long">
+       SELECT user_id
+       FROM web_user
+       WHERE user_name =
+       <if test="userName!=null">
+             ${userName}
+       </if>
+       and status = 1
+  </select>
+
+  <select id="selectUserIdByKeyLike" parameterType="com.taofeng.webcast.dao.query.UserQuery" resultType="java.lang.Long">
+      SELECT user_id
+      FROM web_user
+      <if test="_parameter != null">
+         <include refid="Query_Where_Clause" />
+      </if>
+      <if test="orderByClause != null">
+      order by ${orderByClause}
+       </if>
+  </select>
+
+  <select id="selectUserIdByUserType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM web_user
+    where
+    <if test="userType != null">
+      user_type = #{userType}
+    </if>
+    and status = 1
+  </select>
+
+  <update id="updateByQuerySelective" parameterType="map">
+    update web_user
+    <set>
+      gmt_modified=now(),
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.userNo != null" >
+        user_no = #{record.userNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userName != null" >
+        user_name = #{record.userName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userHeadImg != null" >
+        user_head_img = #{record.userHeadImg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.password != null" >
+        password = #{record.password,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userType != null" >
+        user_type = #{record.userType,jdbcType=INTEGER},
+      </if>
+      <if test="record.userTel != null" >
+        user_tel = #{record.userTel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userSex != null" >
+        user_sex = #{record.userSex,jdbcType=INTEGER},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create =  #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Query_Where_Clause" />
+    </if>
+  </update>
+
+</mapper>

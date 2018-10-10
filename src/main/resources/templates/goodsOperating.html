@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      layout:decorator="admin/layout">
+<head>
+    <meta charset="UTF-8" />
+    <title>网络直播管理-商品列表详情</title>
+    <link th:href="@{css/goodsOperating.css}" rel="stylesheet"/>
+    <script th:src="@{js/goodsOperating.js}"></script>
+    <script>
+        $(function() {
+            $(".addGoods-main").dialog({
+                width: 500,
+                height: 420,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".updateGoods-main").dialog({
+                width: 500,
+                height: 420,
+                autoOpen: false,
+                modal:true,
+                show: {
+                    effect: "blind",
+                    duration: 1000
+                },
+                hide: {
+                    effect: "explode",
+                    duration: 1000
+                }
+            });
+
+            $(".add-goods-button").click(function() {
+                $(".addGoods-name-input").val('');
+                $(".addGoods-price-input").val('');
+                $(".addGoods-img-textarea").val('');
+                $( ".addGoods-main" ).dialog("open");
+            });
+        });
+    </script>
+</head>
+<body>
+<th:block layout:fragment="right-fragment">
+    <div class="goodsOperating-main">
+        <div class="goodsOperating-title">
+            <p>商品列表详情</p>
+        </div>
+        <hr/>
+        <div class="goodsOperating-search">
+            <div class="goodsOperating-top">
+                <span>商品名称:</span>
+                <input type="text" placeholder="请输入商品名称" value="" class="goods-goodName" style="width:150px;height:38px;"/>
+                <span>商品编号:</span>
+                <input type="text" placeholder="请输入商品编号" value="" class="goods-goodNo" style="width:150px;height:38px;"/>
+            </div>
+            <div class="goodsOperating-center">
+                <span>上架时间:</span>
+                <input type="text" placeholder="请输入上架时间" value="" class="goods-time" style="width:150px;height:38px;"/>
+                <span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</span>
+                <input type="text" placeholder="请输入价格" value="" class="goods-upPrice" style="width:150px;height:38px;"/>
+                <span>至</span>
+                <input type="text" placeholder="请输入价格" value="" class="goods-underPrice" style="width:150px;height:38px;"/>
+                <button style="width:100px;height:40px;" class="search-goodsOperating layui-btn">搜索</button>
+            </div>
+        </div>
+        <hr/>
+        <div class="goodsOperating-add">
+           <button style="width: 100px;height:40px;" class="add-goods-button layui-btn">添加</button>
+        </div>
+        <div class="goodsOperating-table">
+            <table style="width: 1000px;" border='1' class="table">
+                <thead>
+                <tr style="height: 50px;">
+                    <th>商品编号</th>
+                    <th>商品名称</th>
+                    <th>价格</th>
+                    <th>上架时间</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+        <div class="goodsOperating-button">
+        </div>
+        <div class="addGoods-main" title="添加商品">
+            <div class="addGoods-name">
+                <span>商品名称:</span>
+                <input type="text" placeholder="请输入商品名称" class="addGoods-name-input" style="width:150px;height:38px;"/>
+            </div>
+            <div class="addGoods-price">
+                <span>商品价格:</span>
+                <input type="text" placeholder="请输入商品价格" class="addGoods-price-input" style="width:150px;height:38px;"/>
+            </div>
+            <div class="addGoods-img">
+                <span>商品图片:</span>
+                <div class="addGoods-content-div">
+                    <textarea  style="height: 200px;width: 400px;" placeholder="字数1000以内" class="addGoods-img-textarea"></textarea>
+                </div>
+            </div>
+            <div class="addGoods-success">
+                <input type="button layui-btn" value="保存" style="height: 40px; width:100px;"/>
+            </div>
+        </div>
+        <div class="updateGoods-main" title="添加商品">
+            <div class="updateGoods-name">
+                <span>商品名称:</span>
+                <input type="text" placeholder="请输入商品名称" class="updateGoods-name-input" style="width:150px;height:38px;"/>
+            </div>
+            <div class="updateGoods-price">
+                <span>商品价格:</span>
+                <input type="text" placeholder="请输入商品价格" class="updateGoods-price-input" style="width:150px;height:38px;"/>
+            </div>
+            <div class="updateGoods-img">
+                <span>商品图片:</span>
+                <div class="updateGoods-content-div">
+                    <textarea  style="height: 200px;width: 400px;" placeholder="字数1000以内" class="updateGoods-img-textarea"></textarea>
+                </div>
+            </div>
+            <div class="updateGoods-success">
+                <input type="button layui-btn" value="保存" style="height: 40px; width:100px;"/>
+            </div>
+        </div>
+    </div>
+</th:block>
+</body>
+</html>

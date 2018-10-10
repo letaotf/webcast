@@ -1,0 +1,58 @@
+#user-list{
+    box-sizing: border-box;
+    padding-top:30px;
+}
+
+#user-title-div{
+    box-sizing: border-box;
+    padding-left: 500px;
+}
+
+#user-title-div p{
+    font-size: 20px;
+}
+
+#user-condition-div{
+    box-sizing: border-box;
+    padding-top: 10px;
+}
+
+#user-list-page{
+   box-sizing: border-box;
+    padding-top: 5px;
+}
+
+#user-table{
+    box-sizing: border-box;
+    padding-top: 20px;
+    padding-left: 71px;
+}
+
+#user-condition-div{
+    box-sizing: border-box;
+    padding-top: 10px;
+    padding-left: 100px;
+}
+
+.active{
+    color: #fff !important;
+    background: #009688 !important;
+}
+
+#pager-wrapper{
+    box-sizing: border-box;
+    padding-left: 800px;
+}
+
+#user-table table th{
+    text-align: center;
+    background-color: #009688;
+}
+
+#user-table td{
+    text-align: center;
+}
+
+
+
+

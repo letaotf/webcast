@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.ext.IntergityValuesExtMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.IntergityValuesDO" >
+    <id column="intergity_id" property="intergityId" jdbcType="BIGINT" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="value_num" property="valueNum" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    intergity_id, user_id, value_num, status, gmt_create, gmt_modified
+  </sql>
+  <sql id="Query_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="Update_By_Query_Where_Clause">
+    <where>
+      <foreach collection="query.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="MysqlDialectSuffix">
+    <if test="pageOffset &gt;= 0 and pageSize &gt; 0">
+      <![CDATA[ LIMIT #{pageOffset,jdbcType=INTEGER}, #{pageSize,jdbcType=INTEGER} ]]>
+    </if>
+  </sql>
+
+  <select id="selectByQuery" parameterType="com.taofeng.webcast.dao.query.IntergityValuesQuery" resultMap="BaseResultMap">
+    SELECT
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    FROM web_intergity_values
+    <if test="_parameter != null">
+      <include refid="Query_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <include refid="MysqlDialectSuffix"/>
+  </select>
+
+  <select id="countByQuery" parameterType="com.taofeng.webcast.dao.query.IntergityValuesQuery" resultType="java.lang.Integer">
+    select count(*) from web_intergity_values
+    <if test="_parameter != null">
+      <include refid="Query_Where_Clause" />
+    </if>
+  </select>
+
+  <update id="updateByQuerySelective" parameterType="map">
+    update web_intergity_values
+    <set>
+      gmt_modified=now(),
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=BIGINT},
+      </if>
+      <if test="record.valueNum != null" >
+        value_num = #{record.valueNum,jdbcType=DOUBLE},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Query_Where_Clause" />
+    </if>
+  </update>
+
+  <resultMap id="QueryResultMap" type="com.taofeng.webcast.common.DTO.IntergitValuesDTO" >
+    <id column="intergity_id" property="intergityId" jdbcType="BIGINT" />
+    <result column="user_name" property="userName" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="BIGINT" />
+    <result column="user_no" property="userNo" jdbcType="VARCHAR" />
+    <result column="user_type" property="userType" jdbcType="INTEGER" />
+    <result column="user_tel" property="userTel" jdbcType="VARCHAR" />
+    <result column="value_num" property="valueNum" jdbcType="DOUBLE" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP" />
+    <result column="gmt_modified" property="gmtModified" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <select id="selectIntergityDetailsByQuery" parameterType="com.taofeng.webcast.dao.query.IntergityValuesQuery" resultMap="QueryResultMap">
+    SELECT
+    intergity_id, b.user_id, user_name, user_no, value_num ,user_type ,user_tel
+    FROM web_intergity_values a, web_user b
+    where a.user_id = b.user_id and
+    <foreach collection="oredCriteria" item="criteria" separator="or">
+      <if test="criteria.valid">
+        <trim prefix="(" prefixOverrides="and" suffix=")">
+          <foreach collection="criteria.criteria" item="criterion">
+            <trim prefix="b.">
+            <choose>
+              <when test="criterion.noValue">
+                and ${criterion.condition}
+              </when>
+              <when test="criterion.singleValue">
+                and ${criterion.condition} #{criterion.value}
+              </when>
+              <when test="criterion.betweenValue">
+                and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+              </when>
+              <when test="criterion.listValue">
+                and ${criterion.condition}
+                <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  #{listItem}
+                </foreach>
+              </when>
+            </choose>
+            </trim>
+          </foreach>
+        </trim>
+      </if>
+    </foreach>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <include refid="MysqlDialectSuffix"/>
+  </select>
+
+
+</mapper>

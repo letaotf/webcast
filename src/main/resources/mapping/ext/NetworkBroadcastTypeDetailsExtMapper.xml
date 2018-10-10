@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.taofeng.webcast.dao.mapper.ext.NetworkBroadcastTypeDetailsExtMapper" >
+  <resultMap id="BaseResultMap" type="com.taofeng.webcast.dao.domain.NetworkBroadcastTypeDetailsDO">
+    <id column="network_broadcast_type_detail_id" jdbcType="BIGINT" property="networkBroadcastTypeDetailId" />
+    <result column="type_id" jdbcType="BIGINT" property="typeId" />
+    <result column="network_type_no" jdbcType="VARCHAR" property="networkTypeNo" />
+    <result column="type_detail_name" jdbcType="VARCHAR" property="typeDetailName" />
+    <result column="brief_introduction" jdbcType="VARCHAR" property="briefIntroduction" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="gmt_create" jdbcType="TIMESTAMP" property="gmtCreate" />
+    <result column="gmt_modified" jdbcType="TIMESTAMP" property="gmtModified" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    network_broadcast_type_detail_id, type_id, network_type_no, type_detail_name, brief_introduction,
+    status, gmt_create, gmt_modified
+  </sql>
+  <sql id="Query_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="Update_By_Query_Where_Clause">
+    <where>
+      <foreach collection="query.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+
+  <sql id="MysqlDialectSuffix">
+    <if test="pageOffset &gt;= 0 and pageSize &gt; 0">
+      <![CDATA[ LIMIT #{pageOffset,jdbcType=INTEGER}, #{pageSize,jdbcType=INTEGER} ]]>
+    </if>
+  </sql>
+
+  <select id="selectByQuery" parameterType="com.taofeng.webcast.dao.query.NetworkBroadcastTypeDetailsQuery" resultMap="BaseResultMap">
+    SELECT
+    <include refid="Base_Column_List" />
+    FROM web_network_broadcast_type_details
+    <if test="_parameter != null">
+      <include refid="Query_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+    <include refid="MysqlDialectSuffix"/>
+  </select>
+
+  <select id="countByQuery" parameterType="com.taofeng.webcast.dao.query.NetworkBroadcastTypeDetailsQuery" resultType="java.lang.Integer">
+    select count(*) from web_network_broadcast_type_details
+    <if test="_parameter != null">
+      <include refid="Query_Where_Clause" />
+    </if>
+  </select>
+
+  <update id="updateByQuerySelective" parameterType="map">
+    update web_network_broadcast_type_details
+    <set>
+      gmt_modified=now(),
+      <if test="record.typeId != null" >
+        type_id = #{record.typeId,jdbcType=BIGINT},
+      </if>
+      <if test="record.networkTypeNo != null" >
+        network_type_no = #{record.networkTypeNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.typeDetailName != null" >
+        type_detail_name = #{record.typeDetailName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.briefIntroduction != null" >
+        brief_introduction = #{record.briefIntroduction,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.gmtCreate != null" >
+        gmt_create = #{record.gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.gmtModified != null" >
+        gmt_modified = #{record.gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Query_Where_Clause" />
+    </if>
+  </update>
+
+</mapper>

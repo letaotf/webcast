@@ -1,0 +1,259 @@
+
+#main{ min-width:1000px;}
+
+
+#header{
+    width:100%;
+    height:152px;
+    overflow:hidden;
+}
+#header .head_nav{
+    width: 100%;
+    height: 90px;
+    margin:0 auto;
+    color:#444;
+}
+
+#header a{ color:#444;}
+
+#header a:hover{ color:#ff4801;text-decoration: underline;}
+
+#header .logo-icon{
+    padding-left: 380px;
+    width: 100%;
+    height: 90px;
+    border-bottom: 1px solid #0C0C0C;
+}
+
+#header .logo{
+    width: 628px;
+    height: 90px;
+    background:url(../img/logintf.jpg) no-repeat;
+    position:relative;
+    margin:11px 100px 0 0;
+}
+
+#header .login-menu{
+    box-sizing: border-box;
+    width: 100%;
+    height:50px;
+    background-color: #f0f0f0;
+}
+
+#header .menu{
+    box-sizing: border-box;
+    padding-left: 210px;
+}
+
+#header .menu .tit{
+    float:left;
+    font-size:16px;
+    line-height:80px;
+    margin:0 15px;
+    color:#444;
+}
+
+#header .menu .tit_ac{
+    float:left;
+    font-size:16px;
+    line-height:55px;
+    margin:0 15px;
+    color:#ff4801;
+}
+
+#header .menu .tit_ac a{
+    color:#ff4801;
+}
+
+/*----------登录按钮-----------*/
+
+#header .login_zc{
+    float:right;
+    cursor:pointer;
+    box-sizing: border-box;
+    padding-right: 230px;
+}
+
+#header .login_zc .dl{
+    float:left;
+}
+
+#header .login_zc .dl .icon{
+    float:left;
+    width:22px;
+    height:22px;
+    background:url(../img/login_icon.gif) no-repeat;
+    margin:16px 0;
+}
+
+#header .login_zc .dl .tit{
+    font-size:16px;
+    line-height:55px;
+    margin-left:10px;
+    color:#444;
+    float:left;
+}
+
+#header .login_zc .dl .icon2{
+    float:left;
+    width:22px;
+    height:22px;
+    background:url(../img/login_icon2.gif) no-repeat;
+    margin:16px 0;
+    margin-left:10px;
+}
+
+/*----------banner-----------*/
+
+#banner{
+    width:100%;
+    height:396px;
+    overflow:hidden;
+    background:#ffda89;
+    border:0;
+}
+
+/*----------¼ÓÈëÅª1„1¤77·ÅÆ½…£1„1¤77-----------*/
+
+#jrkfpt{
+    width:100%;
+    height:88px;
+    overflow:hidden;
+    background:#f0f0f0;
+    margin-bottom:20px;
+
+}
+#jrkfpt .jrkfpt_nav{
+    width:1000px;
+    height:88x;
+    margin:0 auto;
+    overflow:hidden;
+}
+
+.jrkfpt_tit01{
+    float:left;
+    font-size:16px;
+    line-height:78px;
+    text-align:left; color:#636363;
+}
+
+.jrkfpt_button{
+    width:180px;
+    height:46px;
+    background:url(../img/yyjr_but2_bj.gif) no-repeat;
+    color:#fff; line-height:46px;
+    float:right; cursor:pointer;
+}
+
+.jrkfpt_button .icon{
+    width:18px;
+    height:18px;
+    background:url(../img/add_icon.png) no-repeat;
+    float:left;
+    margin:14px 13px 0 26px;
+}
+
+.jrkfpt_button .tit{
+    font-size:16px;
+    color:#fff;
+    float:left;
+}
+
+.jrkfpt_button:hover{
+    background:url(../img/yyjr_but2_bj_hover.gif) no-repeat;
+}
+
+.top{
+    width:65px;
+    height:65px;
+    position:fixed;
+    right:20px;
+    bottom:130px;
+    background:url(../images/top_icon.gif) no-repeat;
+    cursor:pointer;
+}
+
+.top:hover{
+    background:url(../img/top_icon_hover.gif) no-repeat;
+}
+
+#content{
+    width:100%;
+    height:auto;
+    overflow:hidden;
+
+}
+#content .content_nav{
+    width:80%;
+    min-height:495px;
+    margin:0 auto;
+    overflow:hidden;
+}
+
+#footer{
+    width:100%; height:80px;
+    overflow:hidden;
+    background:#e6e6e6;
+    margin-top:22px;
+    position: relative;
+}
+
+#footer .footer_nav{
+    width:1000px;  margin:0 auto;
+    overflow:hidden;
+}
+
+#footer .fot_ti{
+    position:relative;
+    display:inline-block;
+    margin:15px 0 0 0;
+    font-size:12px;
+    line-height:30px;
+    text-align:left;
+    color:#969696;
+    float:left;
+}
+
+#footer .fot_ti a{
+    color:#969696;
+}
+
+#footer .fot_ti a:hover{
+    color:#f76920;
+    text-decoration: underline;
+}
+
+#footer .fot_log{
+    width:87px; height:90px;
+    background:url(../img/footer_log.gif) no-repeat;
+    position:relative;
+    display:block;
+    margin:23px 10px 0 0;
+    float:right;
+}
+
+/*Ó¦ÓÃ½ÓÈë*/
+#list_banner{
+    width:100%;
+    height:150px;
+    overflow:hidden;
+    background:url(../img/list_banner01.gif) no-repeat center;
+}
+
+.path{ font-size:12px; line-height:40px; color:#444; float:right;}
+
+/*indexdown*/
+.sortul{margin:0 auto;padding:20px 150px;font-size:12px;line-height:18px;overflow:auto;}
+.sortul li{width:33.3%;float:left;}
+.sortul li a{text-align:center;display:block;}
+.sortul li a:hover{background:#eee;text-decoration: none;}
+.sortul li a:hover h2{color:#3399ff;}
+.sortul li p{margin:10px 0;color:#888;}
+
+
+
+
+
+
+
+
